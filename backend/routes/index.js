@@ -3,9 +3,7 @@
 
 // const userSignUpController = require("../controller/userSignUp");
 // router.post("/signp",userSignUpController)
-
 // module.exports=router
-
 // ../routes/index.js2
 const express = require('express');
 const router = express.Router(); // Correctly instantiate the router

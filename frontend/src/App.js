@@ -10,10 +10,13 @@ import SummerApi from './common';
 import Context from './context';
 import { useDispatch } from 'react-redux';
 import { setUserDetails } from './store/userSlice';
-
+import { useLocation } from 'react-router-dom';
 
 //show the user 
 function App() {
+  const location = useLocation();
+  const isAdminPanel = location.pathname.startsWith('/admin-penal');
+
   //this is the user number of product add in the cart 
   const [countProduct,setCountProduct]=useState(0)
   console.log('number of product in cart',countProduct)
@@ -29,10 +32,10 @@ function App() {
         credentials: 'include'
       });
       if (!dataResponce.ok) {
-        console.error('Error fetching user details:', dataResponce.status, dataResponce.statusText);
+        console.error('Error fetching user details:',dataResponce.status, dataResponce.statusText);
         return;
       }
-      const dataApi = await dataResponce.json()
+      const dataApi = await dataResponce.json();
 
       if(dataApi.success){
         dispatch(setUserDetails(dataApi.data))
@@ -75,14 +78,15 @@ function App() {
         }} >
           <ToastContainer
           position="top-center"
-           />
+           /> 
 
-          <Header></Header>
+           {!isAdminPanel && <Header />}
          
           <main className='min-h-[calc(100vh-110px)] pt-16'>
             <Outlet />
           </main>
-          <Footer></Footer>
+          {!isAdminPanel &&  <Footer/>}
+        
           {/* here the outlet is use diplay the all pages we creted in routes folder */}
         </Context.Provider>
       </>

@@ -6,7 +6,7 @@ import displayINRCurrency from "../helper/displayCurrency";
 function AdminProductCard({ product, key, fetchAllProduct }) {
   const [editProduct, SetEditpProduct] = useState(false);
   return (
-    <div className="bg-white p-4 rounded">
+    <div className="bg-white p-4 rounded border">
       <div className="w-44">
        <div className="w-32 h-32 flex justify-center items-center ">
        <img

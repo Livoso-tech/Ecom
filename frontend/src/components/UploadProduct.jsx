@@ -240,7 +240,7 @@ function UploadProduct({ onclose,fetchAllProduct }) {
                 value={data.description}
               >
               </textarea>
-          <button className="px-3 py-2 bg-red-600 text-white hover:bg-red-700">
+          <button className="px-3 py-2 bg-indigo-500 text-white hover:bg-indigo-500">
             Upload Product{" "}
           </button>
         </form>

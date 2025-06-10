@@ -1,8 +1,9 @@
 const  jwt = require('jsonwebtoken');
 async function authToken(req,res,next){
-   try{
+    try{
    const token=req.cookies?.token 
    console.log("token is     -" ,token)
+   
    if(!token){
     return res.status(200).json({
       message: "User not login",
@@ -10,6 +11,7 @@ async function authToken(req,res,next){
       success:false     
     })
    }
+
    jwt.verify(token,process.env.TOKEN_SECRET_KEY, function(err, decoded) {
     console.log(err)
     console.log("decodedd",decoded) // bar
