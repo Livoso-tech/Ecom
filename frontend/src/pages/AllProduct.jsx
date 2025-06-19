@@ -21,14 +21,14 @@ function AllProduct() {
   },[])
 
   return (
-    <div>
-    <div className='bg-white py-2 px-4 flex justify-between items-center'>
+    <div className=''>
+    <div className='bg-white py-2 px-4 flex justify-between items-center '>
       <h2 className='font-bold text-lg'>All product</h2>
       <button className='border-2 rounded-full py-2 px-4 border-indigo-500 text-indigo-500 hover:bg-indigo-500 hover:text-white transition-all' onClick={()=>setopenUploadProduct(true)}>Upload product</button>
     </div>
 
     {/*......... get all product  from database and display it here */}
-          <div className='flex flex-wrap items-center gap-6 py-4 ps-8 '>
+          <div className='flex flex-wrap items-center gap-6 lg:gap-8  ps-8 '>
             {
               allProduct.map((product,index)=>{
                 return(

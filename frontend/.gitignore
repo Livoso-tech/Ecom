@@ -7,6 +7,8 @@
 .env
 .env.
 
+
+/
 # testing
 /coverage
 
@@ -23,3 +25,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+/src/assest/products
+

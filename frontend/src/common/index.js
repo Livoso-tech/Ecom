@@ -2,7 +2,7 @@
 
 
 
-const backendDomain="http://localhost:8080"
+const backendDomain="http://localhost:8080";
 const SummerApi={
     signup:{
         url:`${backendDomain}/api/signup`,

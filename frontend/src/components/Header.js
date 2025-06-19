@@ -50,8 +50,6 @@ const Header = () => {
     }
   }
 
-
-
   //for the search product ................................................................
   const handleSearch = (e) => {
     const { value } = e.target
@@ -95,7 +93,7 @@ const Header = () => {
 
         <div className='hidden lg:flex items-center w-full justify-between max-w-sm border rounded '>
           <input type="text" placeholder='Search product here  ' className='w-full outline-none pl-4' value={searchdata} onChange={handleSearch} />
-          <div className='text-lg min-w-[50px] h-8 bg-indigo-600 flex items-center  justify-center rounded-r-md text-white' >
+          <div className='text-lg min-w-[50px] h-8 bg-red-600 flex items-center  justify-center rounded-r-md text-white' >
             <ImSearch />
           </div>
         </div>
@@ -121,7 +119,7 @@ const Header = () => {
       <nav className="flex flex-col gap-1">
         {user?.role === ROLE.ADMIN && (
           <Link
-            to={"admin-penal/all-user"}
+            to={"admin"}
             className='flex items-center gap-2 hover:bg-indigo-50 hover:text-indigo-600 px-3 py-2 rounded transition-colors duration-150 font-medium'
           >
             <FaUserShield className="text-md" />
@@ -173,12 +171,15 @@ const Header = () => {
 }
 </div>
           <Link to={"/Cart"} className='text-2xl  relative'>
-            <span><FaShoppingCart /></span>
+           
             {
               user?._id && (
+                <>
+                 <span><FaShoppingCart /></span>
                 <div className=' flex bg-indigo-600 text-white w-5 h-5 rounded-full p-1 items-center justify-center absolute -top-2 -right-3  '>
                   <p className='text-sm'>{context?.countProduct}</p>
                 </div>
+                </>
               )
             }
 
@@ -187,13 +188,13 @@ const Header = () => {
             {
               user?._id ? (
 
-                 <div onClick={hendelLogout} className='flex items-center gap-2 bg-indigo-600 text-white rounded-full hover:bg-red-700  px-3 py-1'>
+                 <div onClick={hendelLogout} className='flex items-center gap-2 bg-red-600 text-white rounded-full hover:bg-red-700  px-3 py-1'>
                  <FaUserCircle />
 
                 <Link to={"/Login"} className=''>Logout</Link>
                </div>
               ) : (
-              <div className='flex items-center gap-2 bg-indigo-600 text-white rounded-full hover:bg-red-700  px-3 py-1'>
+              <div className='flex items-center gap-2 bg-red-600 text-white rounded-full hover:bg-red-700  px-3 py-1'>
                  <FaUserCircle />
 
                 <Link to={"/Login"} className=''>    login</Link>

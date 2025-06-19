@@ -11,17 +11,11 @@ const CategroyWiseProductDisplay = ({category, heading}) => {
     const [data,setData] = useState([])
     const [loading,setLoading] = useState(true)
     const loadingList = new Array(13).fill(null)
-
     const { featchUserAddtoCart } = useContext(Context)
-
     const handleAddToCart = async (e, id) => {
         await addToCart(e, id);
          featchUserAddtoCart();
       };
-
-
-
-
     const fetchData = async() =>{
         setLoading(true)
         const categoryProduct = await fetchCategoryWiseProduct(category)

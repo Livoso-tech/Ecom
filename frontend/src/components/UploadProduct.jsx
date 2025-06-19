@@ -97,7 +97,7 @@ function UploadProduct({ onclose,fetchAllProduct }) {
   }
 
   return (
-    <div className="bg-slate-200 bg-opacity-35 w-full h-full fixed top-0 left-0 bottom-0 right-0 flex justify-center items-center">
+    <div className="bg-slate-200 z-50 bg-opacity-35 w-full h-full fixed top-0 left-0 bottom-0 right-0 flex justify-center items-center">
       <div className=" w-full bg-white max-w-2xl h-full max-h-[70%] p-4 rounded overflow-hidden">
         <div className=" flex justify-between items-center pb-3">
           <h2 className="font-bold text-lg">Upload Products</h2>

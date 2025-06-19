@@ -16,6 +16,7 @@ import { useDispatch} from 'react-redux';
 
 function AdminPanel() {
   const user = useSelector(state => state?.user?.user);
+  console.log("user in admin panel", user);
   const navigate = useNavigate();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

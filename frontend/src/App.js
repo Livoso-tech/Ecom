@@ -15,7 +15,7 @@ import { useLocation } from 'react-router-dom';
 //show the user 
 function App() {
   const location = useLocation();
-  const isAdminPanel = location.pathname.startsWith('/admin-penal');
+  const isAdminPanel = location.pathname.startsWith('/admin');
 
   //this is the user number of product add in the cart 
   const [countProduct,setCountProduct]=useState(0)
@@ -82,7 +82,7 @@ function App() {
 
            {!isAdminPanel && <Header />}
          
-          <main className='min-h-[calc(100vh-110px)] pt-16'>
+          <main className={`min-h-[calc(100vh-110px)] ${!isAdminPanel ? 'pt-16' : ''}`}>
             <Outlet />
           </main>
           {!isAdminPanel &&  <Footer/>}
