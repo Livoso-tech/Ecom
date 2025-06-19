@@ -675,7 +675,7 @@ const AdminDashboard = () => {
         <div className="px-6 py-4 border-t border-gray-200 flex items-center justify-between">
           <div className="text-sm text-gray-700">
             Showing <span className="font-medium">1</span> to <span className="font-medium">{members.length}</span> of{' '}
-            <span className="font-medium">{members.length}</span> results
+            <span className="font-medium">{members.length}</span> result
           </div>
           <div className="flex space-x-2">
             <button className="px-3 py-1 text-sm bg-gray-200 rounded-md hover:bg-gray-300">
